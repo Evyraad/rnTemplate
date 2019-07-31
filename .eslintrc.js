@@ -4,8 +4,10 @@ module.exports = {
     'plugin:react-native/all',
     'airbnb',
     'plugin:flowtype/recommended',
+    'plugin:prettier/recommended',
+    'prettier/react'
   ],
-  plugins: ['flowtype', 'react', 'react-native'],
+  plugins: ['flowtype', 'prettier', 'react', 'react-native'],
   parser: 'babel-eslint',
   parserOptions: {
     ecmaFeatures: {
@@ -27,6 +29,9 @@ module.exports = {
       devDependencies: [
         '**/*.test.js',
       ],
+    }],
+    'prettier/prettier': ['error', {
+      'singleQuote': true,
     }],
   },
   env: {

@@ -7,7 +7,7 @@ import Home from './index';
 export default createBottomTabNavigator(
   {
     Home: { screen: Home },
-    Settings: { screen: Settings },
+    Settings: { screen: Settings }
   },
   {
     initialRouteName: 'Home',
@@ -15,7 +15,7 @@ export default createBottomTabNavigator(
       showIcon: false,
       activeTintColor: colors.blue,
       tabStyle: { justifyContent: 'center' },
-      style: { backgroundColor: colors.gray },
-    },
-  },
+      style: { backgroundColor: colors.gray }
+    }
+  }
 );

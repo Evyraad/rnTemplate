@@ -15,9 +15,9 @@ class ContainerTemplate extends Component {
     return false;
   }
 
-  keyExtractor = (item, i) => `${item.id}_${i}`
+  keyExtractor = (item, i) => `${item.id}_${i}`;
 
-  renderItem = () => <View style={styles.ball} />
+  renderItem = () => <View style={styles.ball} />;
 
   render() {
     return (
@@ -39,9 +39,10 @@ class ContainerTemplate extends Component {
 const mapStateToProps = () => ({});
 
 const mapDispatchToProps = dispatch => ({
-  ...bindActionCreators(Object.assign({}, {
-
-  }), dispatch),
+  ...bindActionCreators(Object.assign({}, {}), dispatch)
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ContainerTemplate);
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(ContainerTemplate);
