@@ -3,16 +3,16 @@ module.exports = {
     'eslint:recommended',
     'plugin:react-native/all',
     'airbnb',
-    'plugin:flowtype/recommended'
+    'plugin:flowtype/recommended',
   ],
-  plugins: ['flowtype', 'prettier', 'react', 'react-native'],
+  plugins: ['flowtype', 'react', 'react-native'],
   parser: 'babel-eslint',
   parserOptions: {
     ecmaFeatures: {
-      jsx: true
+      jsx: true,
     },
     ecmaVersion: 2018,
-    sourceType: 'module'
+    sourceType: 'module',
   },
   rules: {
     'max-len': ['error', { code: 80 }],
@@ -21,37 +21,38 @@ module.exports = {
       allow: [
         '_value',
         '__getValue',
-        '__REDUX_DEVTOOLS_EXTENSION_COMPOSE__'
-      ]
+        '__REDUX_DEVTOOLS_EXTENSION_COMPOSE__',
+      ],
     }],
     'no-mixed-operators': ['error', { allowSamePrecedence: true }],
     'react-native/sort-styles': ['error', 'asc', {
       ignoreStyleProperties: true,
-      ignoreClassNames: true
+      ignoreClassNames: true,
     }],
     'no-multiple-empty-lines': ['error', { max: 2 }],
     'import/no-extraneous-dependencies': ['error', {
       devDependencies: [
-        '**/*.test.js'
-      ]
+        '**/*.test.js',
+        '**/__tests__/**',
+      ],
     }],
-    'arrow-parens': ['error', 'as-needed']
+    'arrow-parens': ['error', 'as-needed'],
   },
   env: {
     es6: true,
-    jest: true
+    jest: true,
   },
   globals: {
     __DEV__: false,
-    window: {}
+    window: {},
   },
   settings: {
     'import/resolver': {
       node: {
         extensions: ['.js', '.ios.js', '.android.js'],
-        paths: ['app']
+        paths: ['app'],
       },
-      'babel-module': {}
+      'babel-module': {},
     },
-  }
+  },
 };

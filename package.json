@@ -7,7 +7,7 @@
     "eslint": "./node_modules/.bin/eslint",
     "flow": "./node_modules/.bin/flow",
     "test": "jest",
-    "clean": "watchman watch-del-all && rm -rf $TMPDIR/react-* && rm -rf $TMPDIR/metro-* && rm -rf $TMPDIR/haste-* && yarn cache clean && jest --clearCache"
+    "reset:cache": "watchman watch-del-all && rm -rf $TMPDIR/react-* && rm -rf $TMPDIR/metro-* && rm -rf $TMPDIR/haste-* && yarn cache clean && jest --clearCache"
   },
   "dependencies": {
     "lodash": "4.17.11",
@@ -48,7 +48,9 @@
     "eslint-plugin-react": "7.13.0",
     "eslint-plugin-react-native": "3.7.0",
     "flow-bin": "0.98.1",
+    "husky": "3.0.2",
     "jest": "24.8.0",
+    "lint-staged": "9.2.1",
     "metro-react-native-babel-preset": "0.54.1",
     "prettier-eslint": "9.0.0",
     "react-test-renderer": "16.8.3"
@@ -64,5 +66,14 @@
     "globals": [
       "__DEV__"
     ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.js": ["eslint --fix", "eslint --ignore-pattern '!.eslintrc.js' --max-warnings=0", "git add"],
+    "*.{js,jsx}": ["flow focus-check", "git add"]
   }
 }

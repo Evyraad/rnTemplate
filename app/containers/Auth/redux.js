@@ -8,8 +8,8 @@ import type { State } from './types';
 /* ------------- Types and Action Creators ------------- */
 const { Types, Creators } = createActions({
   logIn: ['login', 'pass'],
-  logInSuccess: null,
   logInFailed: null,
+  logInSuccess: null,
   logOut: null,
 });
 
@@ -19,30 +19,30 @@ export default Creators;
 /* ------------- Initial State ------------- */
 const INITIAL_STATE: State = Immutable({
   isAuth: false,
-  logining: false,
   loginFailed: false,
+  logining: false,
 });
 
 /* ------------- Reducers ------------- */
 const logInSuccess = (state: State) => ({
   ...state,
   isAuth: true,
-  logining: false,
   loginFailed: false,
+  logining: false,
 });
 
 const logIn = (state: State) => ({
   ...state,
   isAuth: false,
-  logining: true,
   loginFailed: false,
+  logining: true,
 });
 
 const logInFailed = (state: State) => ({
   ...state,
   isAuth: false,
-  logining: false,
   loginFailed: true,
+  logining: false,
 });
 
 const logOut = () => ({ ...INITIAL_STATE });
@@ -50,8 +50,8 @@ const logOut = () => ({ ...INITIAL_STATE });
 /* ------------- Hookup Reducers To Types ------------- */
 export const HANDLERS = {
   LOG_IN: logIn,
-  LOG_IN_SUCCESS: logInSuccess,
   LOG_IN_FAILED: logInFailed,
+  LOG_IN_SUCCESS: logInSuccess,
   LOG_OUT: logOut,
 };
 

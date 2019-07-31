@@ -5,7 +5,7 @@
 export type State = {
   isAuth: boolean,
   logining: boolean,
-  loginFailed: boolean,
+  loginFailed: boolean
 };
 
 /* ------------- Actions ------------- */
@@ -13,7 +13,7 @@ export type State = {
 export type LogIn = {
   +type: 'LOG_IN',
   login: string,
-  pass: string,
+  pass: string
 };
 
 export type LogInSuccess = { +type: 'LOG_IN_SUCCESS' };

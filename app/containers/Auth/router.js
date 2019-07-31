@@ -9,7 +9,8 @@ export default createStackNavigator(
       screen: LoginScreen,
       navigationOptions: { header: null },
     },
-  }, {
+  },
+  {
     initialRouteName: 'Login',
     navigationOptions: { header: null },
     cardStyle: {

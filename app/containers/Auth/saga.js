@@ -7,9 +7,9 @@ import NavigationService from 'containers/Navigation/service';
 import AuthActions from './redux';
 import type { LogIn } from './types';
 
-type LogInArgs = $Rest<LogIn, {|type: string|}>
+type LogInArgs = $Rest<LogIn, {| type: string |}>;
 
-export function* logIn(args: LogInArgs): Saga<void> {
+function* logIn(args: LogInArgs): Saga<void> {
   const { login, pass } = args;
 
   yield delay(1000);
@@ -20,3 +20,7 @@ export function* logIn(args: LogInArgs): Saga<void> {
     yield put(AuthActions.logInSuccess());
   }
 }
+
+export default {
+  logIn,
+};
