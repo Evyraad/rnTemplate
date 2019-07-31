@@ -8,7 +8,6 @@ import {
   View,
 } from 'react-native';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 import PropTypes from 'prop-types';
 
 import Actions from 'containers/Auth/redux';
@@ -111,10 +110,8 @@ const mapStateToProps = ({ auth }) => ({
   loginFailed: auth.loginFailed,
 });
 
-const mapDispatchToProps = dispatch => ({
-  ...bindActionCreators(Object.assign({}, {
-    logIn: Actions.logIn,
-  }), dispatch),
-});
+const mapDispatchToProps = {
+  logIn: Actions.logIn,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login);

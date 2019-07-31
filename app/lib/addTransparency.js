@@ -1,4 +1,4 @@
-// @flow
+/* @flow */
 
 const addTransparency = (
   color: string,
@@ -11,7 +11,9 @@ const addTransparency = (
     transparency
     && (typeof transparency === 'string' || typeof transparency === 'number')
     && !Number.isNaN(+transparency)
-  ) ? transparency : 1;
+      ? transparency
+      : 1
+  );
 
   // ['rgb(', '255,255,255)'] or ['rgba(', '255,255,255,1)']
   let rgb = color.split('(');

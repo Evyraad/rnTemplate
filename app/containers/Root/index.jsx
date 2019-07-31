@@ -15,7 +15,9 @@ class RootContainer extends Component {
     return false;
   }
 
-  setNavRef = (ref) => { this.navigation = ref; }
+  setNavRef = ref => {
+    this.navigation = ref;
+  };
 
   render() {
     return (

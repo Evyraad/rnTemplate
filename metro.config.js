@@ -14,4 +14,8 @@ module.exports = {
       },
     }),
   },
+  resolver: {
+    // Allows you to enable support for JSX files
+    sourceExts: ['jsx', 'js'],
+  },
 };

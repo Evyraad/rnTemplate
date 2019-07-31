@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
+
 import { colors } from 'theme';
-import { deviceType } from 'lib';
-import addTransparency from 'lib/styleFix';
+import { deviceType, addTransparency } from 'lib';
 
 export const barColor = addTransparency(colors.gray, 0.15);
 

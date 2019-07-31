@@ -5,7 +5,7 @@ import createSagaMiddleware from 'redux-saga';
 import crashReporterMiddleware from '../middleware/crashReporter';
 
 // creates the store
-export default (rootReducer) => {
+export default rootReducer => {
   /* ------------- Redux Configuration ------------- */
 
   const middleware = [];
@@ -23,11 +23,9 @@ export default (rootReducer) => {
   /* ------------- Assemble Middleware ------------- */
   enhancers.push(applyMiddleware(...middleware));
 
-  /* eslint-disable no-underscore-dangle */
   const composeEnhancers = (
     window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
   );
-  /* eslint-enable */
 
   const store = {
     ...createStore(rootReducer, composeEnhancers(...enhancers)),

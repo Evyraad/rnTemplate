@@ -3,20 +3,20 @@ module.exports = api => {
 
   const presets = [
     'module:metro-react-native-babel-preset',
-    '@babel/preset-flow'
+    '@babel/preset-flow',
   ];
   const plugins = [
     [
       'module-resolver',
       {
-        extensions: ['.js', '.ios.js', '.android.js'],
+        extensions: ['.js', '.jsx', '.ios.js', '.android.js'],
         alias: {
           containers: './app/containers/',
           theme: './app/theme/',
-          lib: './app/lib/'
-        }
-      }
-    ]
+          lib: './app/lib/',
+        },
+      },
+    ],
   ];
 
   switch (process.env.NODE_ENV) {

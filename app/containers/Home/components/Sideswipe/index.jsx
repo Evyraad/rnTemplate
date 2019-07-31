@@ -36,7 +36,7 @@ class Sideswipe extends Component {
 
   render() {
     const { currentIndex: index } = this.state;
-    const contentOffset = (width - 160) / 2;
+    // const contentOffset = (width - 160) / 2;
 
     return (
       <View style={styles.container}>
@@ -46,7 +46,7 @@ class Sideswipe extends Component {
           itemWidth={100}
           // contentOffset={contentOffset}
           style={{ width }}
-          onIndexChange={(i) => { this.setState(() => ({ currentIndex: i })); }}
+          onIndexChange={i => { this.setState(() => ({ currentIndex: i })); }}
           renderItem={this.renderItem}
         />
       </View>

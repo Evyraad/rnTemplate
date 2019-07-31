@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, FlatList } from 'react-native';
 import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
 // import PropTypes from 'prop-types';
 import _ from 'lodash';
 
@@ -36,13 +35,4 @@ class ContainerTemplate extends Component {
   }
 }
 
-const mapStateToProps = () => ({});
-
-const mapDispatchToProps = dispatch => ({
-  ...bindActionCreators(Object.assign({}, {}), dispatch)
-});
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(ContainerTemplate);
+export default connect(null)(ContainerTemplate);

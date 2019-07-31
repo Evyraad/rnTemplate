@@ -37,6 +37,9 @@ module.exports = {
       ],
     }],
     'arrow-parens': ['error', 'as-needed'],
+    'react/destructuring-assignment': [2, 'always', {
+      ignoreClassFields: true,
+    }],
   },
   env: {
     es6: true,
@@ -49,7 +52,7 @@ module.exports = {
   settings: {
     'import/resolver': {
       node: {
-        extensions: ['.js', '.ios.js', '.android.js'],
+        extensions: ['.js', '.jsx', '.ios.js', '.android.js'],
         paths: ['app'],
       },
       'babel-module': {},

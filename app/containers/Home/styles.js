@@ -1,7 +1,7 @@
 import { Dimensions } from 'react-native';
 import { ScaledSheet } from 'react-native-size-matters';
 
-import addTransparency from 'lib/styleFix';
+import { addTransparency } from 'lib';
 import { colors } from 'theme';
 
 const dimensions = Dimensions.get('window');

@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
-import addTransparency from 'lib/styleFix';
+
+import { addTransparency } from 'lib';
 import { colors } from 'theme';
 
 export default StyleSheet.create({

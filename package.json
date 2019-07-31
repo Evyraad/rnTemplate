@@ -73,7 +73,11 @@
     }
   },
   "lint-staged": {
-    "*.js": ["eslint --fix", "eslint --ignore-pattern '!.eslintrc.js' --max-warnings=0", "git add"],
-    "*.{js,jsx}": ["flow focus-check", "git add"]
+    "*.{js,jsx}": [
+      "eslint --fix",
+      "eslint --ignore-pattern '!.eslintrc.js' --max-warnings=0",
+      "flow focus-check",
+      "git add"
+    ]
   }
 }

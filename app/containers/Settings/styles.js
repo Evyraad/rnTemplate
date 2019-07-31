@@ -4,6 +4,6 @@ export default StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    paddingHorizontal: 36,
+    paddingHorizontal: '16%',
   },
 });
