@@ -1,9 +1,9 @@
-module.exports = (api) => {
+module.exports = api => {
   api.cache(true);
 
   const presets = [
     'module:metro-react-native-babel-preset',
-    '@babel/preset-flow',
+    '@babel/preset-flow'
   ];
   const plugins = [
     [
@@ -13,10 +13,10 @@ module.exports = (api) => {
         alias: {
           containers: './app/containers/',
           theme: './app/theme/',
-          lib: './app/lib/',
-        },
-      },
-    ],
+          lib: './app/lib/'
+        }
+      }
+    ]
   ];
 
   switch (process.env.NODE_ENV) {
@@ -32,4 +32,3 @@ module.exports = (api) => {
 
   return { presets, plugins };
 };
-
