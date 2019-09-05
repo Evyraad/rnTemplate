@@ -1,6 +1,7 @@
-import { AsyncStorage, Platform } from 'react-native';
+import { Platform } from 'react-native';
 import autoMergeLevel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import FilesystemStorage from 'redux-persist-filesystem-storage';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import persistenceTransform from '../helpers/persistenceTransform';
 

@@ -14,20 +14,21 @@ import Actions from 'containers/Auth/redux';
 import { colors } from 'theme';
 import styles, { indicator } from './styles';
 
+const propTypes = {
+  logIn: PropTypes.func.isRequired,
+  logining: PropTypes.bool,
+  loginFailed: PropTypes.bool,
+};
+
+const defaultProps = {
+  logining: false,
+  loginFailed: false,
+};
+
 class Login extends Component {
-  static propTypes = {
-    logIn: PropTypes.func.isRequired,
-    logining: PropTypes.bool,
-    loginFailed: PropTypes.bool,
-  }
+  constructor(props) {
+    super(props);
 
-  static defaultProps = {
-    logining: false,
-    loginFailed: false,
-  }
-
-  constructor() {
-    super();
     this.state = {
       login: '',
       pass: '',
@@ -45,11 +46,11 @@ class Login extends Component {
     const { logIn } = this.props;
     const { login, pass } = this.state;
 
-    // this.props.navigation.navigate('App');
     logIn(login, pass);
   }
 
-  renderIndicator = () => {
+  renderIndicator() {
+    // eslint-disable-next-line react/destructuring-assignment
     if (!this.props.logining) return null;
     return (
       <View style={styles.loading}>
@@ -58,7 +59,8 @@ class Login extends Component {
     );
   }
 
-  renderError = () => {
+  renderError() {
+    // eslint-disable-next-line react/destructuring-assignment
     if (!this.props.loginFailed) return null;
     return <Text style={styles.err}>try again</Text>;
   }
@@ -79,6 +81,7 @@ class Login extends Component {
             placeholder="login"
             style={styles.input}
             placeholderTextColor={colors.blue}
+            autoCapitalize="none"
           />
           <TextInput
             value={pass}
@@ -88,6 +91,7 @@ class Login extends Component {
             style={styles.input}
             placeholderTextColor={colors.blue}
             secureTextEntry
+            autoCapitalize="none"
           />
           <View style={styles.button}>
             <Button
@@ -104,6 +108,9 @@ class Login extends Component {
     );
   }
 }
+
+Login.propTypes = propTypes;
+Login.defaultProps = defaultProps;
 
 const mapStateToProps = ({ auth }) => ({
   logining: auth.logining,

@@ -5,25 +5,27 @@ import { connect } from 'react-redux';
 
 import styles, { indicator } from './styles';
 
+const propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }),
+  isPersist: PropTypes.bool,
+  isAuth: PropTypes.bool,
+};
+
+const defaultProps = {
+  navigation: undefined,
+  isPersist: false,
+  isAuth: false,
+};
+
 class LoadingScreen extends Component {
-  static propTypes = {
-    navigation: PropTypes.shape({
-      navigate: PropTypes.func.isRequired,
-    }),
-    isAuth: PropTypes.bool,
-  }
-
-  static defaultProps = {
-    navigation: undefined,
-    isAuth: false,
-  }
-
   timerId = null;
 
   componentDidMount() {
-    const { isAuth, navigation } = this.props;
+    const { isAuth, navigation, isPersist } = this.props;
 
-    if (navigation) {
+    if (!isPersist) {
       this.timerId = setTimeout(
         () => navigation.navigate(isAuth ? 'App' : 'Auth'),
         2500,
@@ -43,6 +45,9 @@ class LoadingScreen extends Component {
     );
   }
 }
+
+LoadingScreen.propTypes = propTypes;
+LoadingScreen.defaultProps = defaultProps;
 
 const mapStateToProps = ({ auth }) => ({
   isAuth: auth.isAuth,

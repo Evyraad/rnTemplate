@@ -7,22 +7,14 @@ import StatusBar from './components/StatusBar';
 import styles from './styles';
 
 class RootContainer extends Component {
-  componentDidMount() {
-    NavigationService.setNavigator(this.navigation);
-  }
-
   shouldComponentUpdate() {
     return false;
   }
 
-  setNavRef = ref => {
-    this.navigation = ref;
-  };
-
   render() {
     return (
       <View style={styles.container}>
-        <Navigation ref={this.setNavRef} />
+        <Navigation ref={NavigationService.setNavigator} />
         <StatusBar />
       </View>
     );

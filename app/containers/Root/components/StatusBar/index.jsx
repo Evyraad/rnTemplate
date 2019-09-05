@@ -15,4 +15,4 @@ const CustomStatusBar = () => {
   );
 };
 
-export default CustomStatusBar;
+export default React.memo(CustomStatusBar);

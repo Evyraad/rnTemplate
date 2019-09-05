@@ -19,8 +19,8 @@ export default ScaledSheet.create({
   },
   ball: {
     margin: '4@s',
-    height: `78@${scaleType}`,
     width: `78@${scaleType}`,
+    aspectRatio: 1,
     backgroundColor: addTransparency(colors.blue, 0.4),
     borderRadius: '39@ms',
   },

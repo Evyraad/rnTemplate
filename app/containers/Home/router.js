@@ -1,4 +1,5 @@
 import { createBottomTabNavigator } from 'react-navigation';
+import { scale } from 'react-native-size-matters';
 
 import { colors } from 'theme';
 import Settings from 'containers/Settings';
@@ -16,6 +17,7 @@ export default createBottomTabNavigator(
       activeTintColor: colors.blue,
       tabStyle: { justifyContent: 'center' },
       style: { backgroundColor: colors.gray },
+      labelStyle: { fontSize: scale(14) },
     },
   },
 );

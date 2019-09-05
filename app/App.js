@@ -1,6 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 import { PersistGate } from 'redux-persist/es/integration/react';
+// eslint-disable-next-line import/no-unresolved
 import { useScreens } from 'react-native-screens';
 
 import createStore from './redux/index';
@@ -18,7 +19,7 @@ useScreens();
 
 const App = () => (
   <Provider store={store}>
-    <PersistGate persistor={persistor} loading={<LoadingScreen />}>
+    <PersistGate persistor={persistor} loading={<LoadingScreen isPersist />}>
       <RootContainer />
     </PersistGate>
   </Provider>

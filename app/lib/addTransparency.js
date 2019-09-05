@@ -3,7 +3,7 @@
 const addTransparency = (
   color: string,
   transparency: string | number,
-): number => {
+): string => {
   if (typeof color !== 'string') return '#000';
   if (color.indexOf('rgb') === -1) return color;
 

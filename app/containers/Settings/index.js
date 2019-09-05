@@ -8,14 +8,14 @@ import AuthActions from 'containers/Auth/redux';
 import { colors } from 'theme';
 import styles from './styles';
 
-class Home extends Component {
-  static propTypes = {
-    navigation: PropTypes.shape({
-      navigate: PropTypes.func.isRequired,
-    }).isRequired,
-    logOut: PropTypes.func.isRequired,
-  }
+const propTypes = {
+  navigation: PropTypes.shape({
+    navigate: PropTypes.func.isRequired,
+  }).isRequired,
+  logOut: PropTypes.func.isRequired,
+};
 
+class Home extends Component {
   logOut = () => {
     const { navigation, logOut } = this.props;
 
@@ -36,10 +36,10 @@ class Home extends Component {
   }
 }
 
+Home.propTypes = propTypes;
+
 const mapDispatchToProps = dispatch => ({
-  ...bindActionCreators(Object.assign({}, {
-    logOut: AuthActions.logOut,
-  }), dispatch),
+  ...bindActionCreators({ logOut: AuthActions.logOut }, dispatch),
 });
 
 export default connect(null, mapDispatchToProps)(Home);

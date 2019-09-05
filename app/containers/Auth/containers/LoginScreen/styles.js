@@ -4,7 +4,7 @@ import { colors, fonts } from 'theme';
 
 export default ScaledSheet.create({
   button: {
-    marginTop: '15%',
+    marginTop: '60@vs',
     marginHorizontal: '22@s',
   },
   container: {
