@@ -26,20 +26,18 @@ class Home extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Button
-          title="log out"
+        <Button title="log out"
           color={colors.gray_black}
-          onPress={this.logOut}
-        />
+          onPress={this.logOut} />
       </View>
-    );
+    )
   }
 }
 
-Home.propTypes = propTypes;
+Home.propTypes = propTypes
 
 const mapDispatchToProps = dispatch => ({
-  ...bindActionCreators({ logOut: AuthActions.logOut }, dispatch),
+  ...bindActionCreators({ logOut: AuthActions.logOut }, dispatch)
 });
 
 export default connect(null, mapDispatchToProps)(Home);
