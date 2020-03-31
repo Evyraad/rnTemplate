@@ -24,7 +24,7 @@ steps:
 - script: yarn install
   displayName: 'yarn install'
 
-- script: yarn run lint
+- script: yarn run lint ./app/
   displayName: 'lint code'
 # - bash: echo "run lint files in pull request"
 # - script: echo Hello, world!
